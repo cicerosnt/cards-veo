@@ -158,7 +158,9 @@ footer{
 }
 
 #switch span{
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 64px;
   height: 32px;
   background: var(--surface-color);
@@ -169,7 +171,7 @@ footer{
 }
 
 .light #switch  button{
-  animation: slide-in 0.04s forwards;
+  animation: slide-in 0.4s forwards;
 }
 
 #switch button:hover{
