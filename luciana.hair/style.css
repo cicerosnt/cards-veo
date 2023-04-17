@@ -1,0 +1,237 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --text-color: white;
+  --bg-url: url("./assets/bg-dark.jpg");
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.5);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlith-color:  rgba(0, 0, 0, 0.01);
+  
+  --switch-bg-url: url("./assets/moon.svg");
+  --bg-card: rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+}
+
+.light{
+  --text-color: black;
+  --bg-url: url("./assets/bg-desk-light.jpg");
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --switch-bg-url: url("./assets/sum.svg");
+  --bg-card: rgba(0, 0, 0, 0.1);
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-color);
+}
+ul{
+
+  list-style: none;}
+
+body{
+  background: var(--bg-url) no-repeat top center/cover;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  
+  width: 100vw;
+  height: 100vh;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  
+
+  background: var(--bg-card); 
+  
+  
+}
+
+.content{
+  max-width: 360px;
+  margin: auto;
+  border-radius: 0.50rem;
+  padding: 20px 0;
+}
+
+#profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px 20px 20px;
+}
+
+#profile h1{
+margin-top: 8px;
+  font-size: 25px;
+}
+#profile p{
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+}
+#profile img{
+  display: block;
+  width: 150px;
+  border: 4px solid var(--stroke-color);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.social_contacts{
+  padding: 0 20px 20px 20px;
+}
+
+.social_contacts ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.social_contacts ul li a{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  
+  padding: 15px 26px;
+  
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  
+  -webkit-backdrop-filter: blur(4px);
+  font-weight: 500;
+  
+  transition: background 0.2s ease-in-out;
+}
+ul li a:hover{
+  background: var(--surface-color-hover);
+  border: 1px solid var(--stroke-color);
+}
+
+.social_links ul{
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+.social_links ul li{
+  text-align: center;
+  
+}
+.social_links ul li a{
+  display: flex;
+  text-align:  center;
+  padding: 8px;
+  
+  transition: background 0.2s ease-in-out;
+}
+
+.social_links ul li a:hover{
+  background-color: var(--surface-color-hover);
+  border: 0;
+  border-radius: 50%;
+  
+}
+
+#whatsapp{
+  background: rgba(37, 211, 102);
+  color: rgb(236, 229, 221);
+  border: 0;
+}
+
+
+footer{
+  text-align: center;
+}
+
+#switch{
+  position: relative;
+  width: 64px;
+  
+  margin-top: 10px;
+ 
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  
+  position: absolute;
+  z-index: 1;
+  /* top: 50%; */
+  left: 0;
+  transform: rotateY(-50%);
+  cursor: pointer;
+  
+  animation: slide-back 0.4s;
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 32px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 99999px;
+}
+
+.light #switch  button{
+  animation: slide-in 0.4s forwards;
+}
+
+#switch button:hover{
+  outline: 8px solid var(--highlith-color);
+}
+
+@media (min-width: 700px) {
+  :root{
+    --bg-url: url("./assets/bg-desk.jpg");
+  }
+  
+  .light{
+    --bg-url: url("./assets/bg-desk-light.jpg");
+    .content, p{
+      background: var(--bg-card);
+    }
+  }
+}
+
+@keyframes slide-in{
+  from{
+    left: 0%;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
+}
